@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Hendelser med jQuery</title>
+	 
+	<script src="js/jquery-1.8.1.js"></script>
+	<script src="jcanvas.min.js"></script>
+	<canvas width="300" height="150"></canvas>
+		<canvas id="myCanvas" width="300" height="200" style="border:1px solid #000000;">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+	 <canvas id="myCanvas" width="578" height="200"></canvas>
+    X,Y posisjon
+
+	 <script>
+      function writeMessage(canvas, message) {
+        var context = canvas.getContext('2d');
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.font = '15pt Calibri';
+        context.fillStyle = 'blue';
+        context.fillText(message, 10, 25);
+      }
+      function getMousePos(canvas, evt) {
+        var rect = canvas.getBoundingClientRect();
+        return {
+          x: evt.clientX - rect.left,
+          y: evt.clientY - rect.top
+        };
+      }
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+
+      canvas.addEventListener('mousemove', function(evt) {
+        var mousePos = getMousePos(canvas, evt);
+        var message = 'Y og X posisjon: ' + mousePos.x + ',' + mousePos.y;
+        writeMessage(canvas, message);
+      }, false);
+    </script>
+</head>
+<body>
+
+	<p>Testside for å "fange" hendelser fra mus.</p>
+	<p>
+		<ul>
+			<li>[1]Beregne (x,y) posisjon til Canvas DOM element på siden</li> 
+			<li>[2]Finne den globale posisjonen til mus-kursøren i forhold til hele dokumentet</li> 
+			<li>[3]For å lokalisere koordinatsenteret (0,0) til Canvas elementet i det øverste venstre hjørnet, og transformere globale koordinater til lokale koordinater, ta differansen mellom den globale museposisjonen beregnet i [2] og Canvas posisjonen fra [1] </li>
+		</ul>
+	</p>
+	<canvas id="my_canvas" width="200" height="200"></canvas>
+	 
+</body>
+</html>

@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Hendelser med jQuery</title>
+	<!-- Husk å legge til CSS filen din her" -->
+	<script src="js/jquery-1.8.1.js"></script>
+    <script>
+            $(document).keydown(function(event) {
+                switch (event.keyCode) {
+                    case 37: alert('Venstre pil tast trykket'); break;
+                    case 38: alert('Oppover pil tast trykket'); break;
+                    case 39: alert('Høyre pil tast trykket'); break;
+                    case 40: alert('Nedover pil tast trykket'); break;
+                }
+            });
+        </script>
+</head>
+<body>
+	<p>Testside for å "fange" hendelser fra tastatur.</p>
+	<p>
+		<ul>
+			<li>Bruk helst Google Chrome (norsk versjon).</li> 
+			<li>Trykk høyre museknapp og velg "Inspiser element".</li> 
+			<li>Velg "Console" fra hjelpeverktøyets hovedmenyen.</li>
+		</ul>
+	</p>
+	<p>Man har Console også i andre nettlesere. Bruker du en annen nettleser søk på "JavaScript console" for din nettleser for å finne ut hvordan du kan bruke det.</p>
+	<!-- Oppgaveløsning skal implementeres her -->
+</body>
+</html>
